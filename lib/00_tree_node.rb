@@ -37,4 +37,9 @@ class PolyTreeNode
         child_node.parent=(self)
     end
 
+    def remove_child(child_node)
+        raise 'Bad parent=!' if self.children.none?(child_node)
+        child_node.parent=(nil)
+    end
+
 end
