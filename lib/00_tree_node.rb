@@ -19,4 +19,13 @@ class PolyTreeNode
     def value
         @value
     end
+
+    def parent=(node)
+        @parent = node
+        if !node
+            return
+        else
+            node.children << self
+        end
+    end
 end
