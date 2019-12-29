@@ -10,3 +10,33 @@
 * A #parent method that returns the node's parent.
 * A #children method that returns an array of children of a node.
 * A #value method that returns the value stored at the node.
+* #dfs(target_value) method which takes a value to search for and performs the search. 
+```
+ def dfs(target_value)
+        return self if self.value === target_value
+        self.children.each do  |child| 
+            next_search = child.dfs(target_value)
+            # only return if it actually returns correct value
+            return next_search if next_search != nil
+        end
+    nil
+end
+```
+* #bfs(target_value) method to implement breadth first search.
+```
+def bfs(target_value)
+        queue = []
+        visited = []
+        result = nil
+        queue << self
+        return self if self.value === target_value
+        visited << queue.shift
+        queue = self.children
+        while !(queue.empty?)
+            return result = queue.first if queue.first.value === target_value
+            queue.first.children.each {|child| queue << child }
+            visited << queue.shift
+        end
+        result
+end
+```
