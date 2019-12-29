@@ -45,17 +45,12 @@ class PolyTreeNode
     # depth-first-search (stack)
     def dfs(target_value)
         return self if self.value === target_value
-        result = nil
         self.children.each do  |child| 
-            if child.value === target_value 
-                result = child
-            end
-            if child.children
-                # child.children.each { |child_node| return child_node if child_node.value === target_value }
-                result = child.dfs(target_value)
-            end
+            next_search = child.dfs(target_value)
+            # only return if it actually returns correct value
+            return next_search if next_search != nil
         end
-        result
+        nil
     end
 
     # breadth-first-search (queue)
