@@ -1,5 +1,8 @@
 # Ruby PolyTree Nodes Project
 
+[Deployed Repl.it Project]
+Type "rspec" in the console to see if it passes the tests!
+
 ## Learning Goals
 * Know how to implement a polytree using polytree nodes
 * Know how to implement BFS and DFS for your polytree* 
