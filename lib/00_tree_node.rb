@@ -42,4 +42,19 @@ class PolyTreeNode
         child_node.parent=(nil)
     end
 
+    # depth-first-search (stack)
+    def dfs(target_value)
+        return self if self.value === target_value
+        self.children.each do  |child| 
+            if child.value === target_value 
+                return child
+            end
+            if child.children
+                child.children.each { |child_node| return child_node if child_node.value === target_value }
+            end
+        end
+        return nil
+        stack
+    end
+
 end
