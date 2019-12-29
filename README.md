@@ -22,6 +22,18 @@
     nil
 end
 ```
+
+```
+          1
+         / \
+        2   5
+       /   / \
+      3   6   9
+     /   / \
+    4   7   8
+```
+
+
 * #bfs(target_value) method to implement breadth first search.
 ```
 def bfs(target_value)
@@ -39,4 +51,14 @@ def bfs(target_value)
         end
         result
 end
+```
+
+```
+          1
+         / \
+        2   3
+       /   / \
+      4   5   6
+     /   / \
+    7   8   9
 ```
